@@ -1,0 +1,142 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Undangan Tahlilan</title>
+
+<style>
+body {
+    margin:0;
+    font-family: 'Segoe UI', sans-serif;
+    background: linear-gradient(#0f2027, #203a43, #2c5364);
+    color:white;
+    text-align:center;
+}
+
+/* COVER */
+#cover {
+    position:fixed;
+    width:100%;
+    height:100%;
+    background:#0f2027;
+    display:flex;
+    justify-content:center;
+    align-items:center;
+    flex-direction:column;
+    z-index:999;
+}
+
+#cover button {
+    padding:12px 25px;
+    border:none;
+    background:gold;
+    color:black;
+    font-size:16px;
+    border-radius:8px;
+    cursor:pointer;
+}
+
+/* KONTEN */
+.container {
+    padding:20px;
+    opacity:0;
+    transform:translateY(30px);
+    transition:1s;
+}
+
+.show {
+    opacity:1;
+    transform:translateY(0);
+}
+
+h1 {
+    color:gold;
+}
+
+.card {
+    background:rgba(255,255,255,0.1);
+    padding:15px;
+    border-radius:12px;
+    margin:20px 0;
+}
+
+/* animasi fade */
+.fade {
+    animation:fadeIn 2s ease forwards;
+}
+@keyframes fadeIn {
+    from {opacity:0; transform:translateY(20px);}
+    to {opacity:1; transform:translateY(0);}
+}
+</style>
+</head>
+
+<body>
+
+<!-- COVER -->
+<div id="cover">
+    <h2>Undangan Tahlilan</h2>
+    <p>Kepada Bapak/Ibu/Sdr(i)</p>
+    <button onclick="bukaUndangan()">Buka Undangan</button>
+</div>
+
+<!-- AUDIO -->
+<audio id="musik" loop>
+    <source src="https://cdn.pixabay.com/audio/2022/03/15/audio_6c9b2d6c6d.mp3" type="audio/mp3">
+</audio>
+
+<!-- KONTEN -->
+<div id="content" class="container">
+
+    <h1 class="fade">Tahlilan 100 Hari</h1>
+
+    <p class="fade"><i>Bismillahirrahmanirrahim</i></p>
+
+    <p class="fade">
+        Assalamu’alaikum War. Wab<br><br>
+        Dengan memanjatkan puji syukur kehadirat Allah SWT,
+        kami mengundang Bapak/Ibu/Sdr(i) untuk menghadiri:
+    </p>
+
+    <h2 class="fade">MASRIA SAIDDE</h2>
+
+    <div class="card fade">
+        <p><b>Hari:</b> Jum’at, 24 April 2026</p>
+        <p><b>Waktu:</b> 11.00 WITA - Selesai</p>
+        <p><b>Tempat:</b><br>Jl. Trans Sulawesi<br>Kelurahan Kampal</p>
+    </div>
+
+    <p class="fade">
+        Merupakan kehormatan bagi kami atas kehadiran dan doa Bapak/Ibu.
+    </p>
+
+    <p class="fade">
+        Wassalamu’alaikum War. Wab
+    </p>
+
+    <hr style="opacity:0.3">
+
+    <p class="fade"><b>Kami yang mengundang:</b></p>
+    <p class="fade">
+        H. Muh Ishak H, SS, M.Si & Hj. Rismawati<br>
+        Zainal & Karmila<br>
+        Mohammad Arief Idris
+    </p>
+
+</div>
+
+<script>
+function bukaUndangan(){
+    document.getElementById("cover").style.display = "none";
+
+    let content = document.getElementById("content");
+    content.classList.add("show");
+
+    let musik = document.getElementById("musik");
+    musik.play();
+}
+</script>
+
+</body>
+</html>
